@@ -7,6 +7,16 @@ from .models import Women
 from .serializers import WomenSerializer
 
 
+class WomenDetailAPIView(generics.RetrieveUpdateDestroyAPIView):
+
+    queryset = Women.objects.all()
+    serializer_class = WomenSerializer
+
+class WomenUpdateAPIView(generics.UpdateAPIView):
+
+    queryset = Women.objects.all()
+    serializer_class = WomenSerializer
+
 class WomenListCreateAPIView(generics.ListCreateAPIView):
 
     queryset = Women.objects.all()

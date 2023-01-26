@@ -23,5 +23,7 @@ urlpatterns = [
     path('api-auth/', include('rest_framework.urls')),
 
     path('', views.WomenListCreateAPIView.as_view()),
-    path('<int:pk>/', views.WomenListCreateAPIView.as_view()),
+    # path('<int:pk>/', views.WomenListCreateAPIView.as_view()),
+    # path('<int:pk>/', views.WomenUpdateAPIView.as_view()),
+    path('<int:pk>/', views.WomenDetailAPIView.as_view()),
 ]
