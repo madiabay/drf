@@ -22,8 +22,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api-auth/', include('rest_framework.urls')),
 
-    path('', views.WomenListCreateAPIView.as_view()),
+    path('', views.WomenViewSet.as_view({'get': 'list'})),
     # path('<int:pk>/', views.WomenListCreateAPIView.as_view()),
     # path('<int:pk>/', views.WomenUpdateAPIView.as_view()),
-    path('<int:pk>/', views.WomenDetailAPIView.as_view()),
+    path('<int:pk>/', views.WomenViewSet.as_view({'delete': 'destroy'})),
 ]

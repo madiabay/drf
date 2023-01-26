@@ -2,25 +2,31 @@ from django.forms import model_to_dict
 from rest_framework import generics
 from rest_framework.views import APIView
 from rest_framework.response import Response
+from rest_framework.viewsets import ModelViewSet
 
 from .models import Women
 from .serializers import WomenSerializer
 
 
-class WomenDetailAPIView(generics.RetrieveUpdateDestroyAPIView):
+class WomenViewSet(ModelViewSet):
 
     queryset = Women.objects.all()
     serializer_class = WomenSerializer
 
-class WomenUpdateAPIView(generics.UpdateAPIView):
+# class WomenDetailAPIView(generics.RetrieveUpdateDestroyAPIView):
 
-    queryset = Women.objects.all()
-    serializer_class = WomenSerializer
+#     queryset = Women.objects.all()
+#     serializer_class = WomenSerializer
 
-class WomenListCreateAPIView(generics.ListCreateAPIView):
+# class WomenUpdateAPIView(generics.UpdateAPIView):
 
-    queryset = Women.objects.all()
-    serializer_class = WomenSerializer
+#     queryset = Women.objects.all()
+#     serializer_class = WomenSerializer
+
+# class WomenListCreateAPIView(generics.ListCreateAPIView):
+
+#     queryset = Women.objects.all()
+#     serializer_class = WomenSerializer
 
 # class WomenAPIView(APIView):
 #     def get(self, request):
