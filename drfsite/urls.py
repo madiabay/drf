@@ -20,9 +20,11 @@ from rest_framework import routers
 from women import views
 
 
-router = routers.SimpleRouter()
+router = routers.DefaultRouter()
 
 router.register(prefix=r'women', viewset=views.WomenViewSet)
+
+print(router.urls)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
