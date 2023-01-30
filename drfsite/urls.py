@@ -20,7 +20,7 @@ from women import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api-auth/', include('rest_framework.urls')),
+    path('api-auth/', include('rest_framework.urls')), # this is Session-based authentication
 
     path('women/', views.WomenAPIList.as_view()),
     path('women/<int:pk>/', views.WomenAPIUpdate.as_view()),
