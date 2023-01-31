@@ -14,7 +14,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import path, include, re_path
 
 from women import views
 
@@ -25,4 +25,7 @@ urlpatterns = [
     path('women/', views.WomenAPIList.as_view()),
     path('women/<int:pk>/', views.WomenAPIUpdate.as_view()),
     path('womendelete/<int:pk>/', views.WomenAPIDestroy.as_view()),
+
+    path(r'auth/', include('djoser.urls')),
+    re_path(r'^auth/', include('djoser.urls.authtoken')),
 ]
